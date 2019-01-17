@@ -1,0 +1,22 @@
+NAME: 异业营销
+OtherCoupon:
+    Case1:
+        #A商家为发券商家;B商家为建券商家.   A发券,B核销
+        Desc: 异业营销发券并撤销场景,获取异业营销活动列表->异业营销发券->异业营销券码核销
+
+        #获取异业营销活动列表
+        OtherListUrl: /activity/otherlist
+        OtherList: {"page":1}
+
+        #异业营销发券
+        OtherSendUrl: /coupon/othersend
+        OtherSend: {"cno":"1213058296282154","aid":3032340,"biz_id":"56"}
+
+        #异业营销券码核销
+        OtherVerificationUrl: /coupon/otherverification
+        OtherVerification: {"coupon_code":"1574518583967556","cashier_id":1140713955}
+
+        Appid: dp3wY4YtycajNEz23zZpb5Jl #发券商家
+
+        Appid2: dp0Rm4wNl6A7q6w1QzcZQstr #风之谷，建券商家来核销券
+        Appkey2: b16058ee2fcdfec8f033c1ec0aff200e

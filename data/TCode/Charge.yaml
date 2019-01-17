@@ -1,0 +1,71 @@
+name: 交易接口
+
+CHARGE_CASE1: #当日储值统计/charge/today
+    Url: /charge/today
+    Case1: #
+        Desc: 当日储值统计
+        ChargeToDay: {"begin_time":"09:00","end_time":"18:00","shop_id":"1083540577"}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+CHARGE_CASE2: #储值是否开发票/charge/receipt
+    Url: /charge/receipt
+    Case1: #储值是否开发票 - 开发票
+        Desc: 储值开发票
+        ChargeReceipt: {"biz_id":"20190115145039008","has_receipt":1}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+    Case2: #储值是否开发票 -不开发票
+        Desc: 储值不开发票
+        ChargeReceipt: {"biz_id":"20190115145039008","has_receipt":2}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+CHARGE_CASE3: #储值调整/charge/change
+    Url: /charge/change
+    Case1: #储值调整 - 增加储值金额
+        Desc: 储值增加1,送1
+        ChargeChange: {"cno":"1213058342454855","shop_id":1083540577,"cashier_id":"1131294517","money":100,"award_money":100,"change_type":1,"remark":"test"}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+    Case2: #储储值调整 - 减少储值金额
+        Desc: 储值减少1
+        ChargeChange: {"cno":"1213058342454855","shop_id":1083540577,"cashier_id":"1131294517","money":100,"award_money":100,"change_type":2,"remark":"test"}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+CHARGE_CASE4: #查看门店储值规则设置/charge/rule
+    Url: /charge/rule
+    Case1: #查看门店储值规则设置
+        Desc: 查看门店储值规则设置
+        ChargeRule: {"shop_id":1083540577}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+CHARGE_CASE5: #储值记录详情/charge/view
+    Url: /charge/view
+    Case1: #储值记录详情/
+        Desc: 查询指定流水号储值记录详情
+        ChargeView: {"charge_id":"1622709503764947"}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+
+CHARGE_CASE6: #pos储值记录详情/pos/chargedetail
+    Url: /pos/chargedetail
+    Case1: #pos储值记录详情
+        Desc: 查询指定流水号储值记录详情/pos/chargedetail
+        PosChargeDetail: {"tcId":'1622709931668573'}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+CHARGE_CASE7: #储值调整/charge/change
+    Url: /charge/change
+    Case1: #储值调整
+        Desc: 手工调整储值-增加
+        ChargeChange: {"cno":'1586313587095560',"shop_id":'1083540577',"money":100,"award_money":0,"change_type":1,"remark":'测试手工调整增加'}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+    Case2: #储值调整
+        Desc: 手工调整储值-减少
+        ChargeChange: {"cno":'1586313587095560',"shop_id":'1083540577',"money":100,"award_money":0,"change_type":2,"remark":'测试手工调整减少'}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl

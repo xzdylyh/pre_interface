@@ -1,0 +1,40 @@
+name: 其它模块接口
+
+MANAGE_CASE1: #获取收银员列表/cashier/list
+    Url: /cashier/list
+    Case1: #获取收银员列表
+        Desc: 获取收银员列表-0页
+        CashierList: {"shop_id":1083540577,"page":0}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+MANAGE_CASE2: #获取门店列表/shop/list
+    Url: /shop/list
+    Case1: #获取门店列表
+        Desc: 获取门店列表
+        ShopList: {}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+MANAGE_CASE3: #查询员工/employee/list
+    Url: /employee/list
+    Case1: #查询员工
+        Desc: 查询员工
+        EmployeeList: {"shop_id":1380598237}
+        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+
+
+MANAGE_CASE4: #收银员账号登陆签到/pos/signin
+    Url: /pos/signin
+    Case1: #收银员账号登陆签到
+        Desc: 收银员账号登陆签到
+        PosSignin: {"username":13718651998,"password":123456,"shop_id":1083540577}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+MANAGE_CASE5: #硬pos获取用户的积分规则/pos/shopcredit
+    Url: /pos/shopcredit
+    Case1: #获取用户的积分规则
+        Desc: 获取用户的积分规则
+        PosShopcredit: {"uid":'71622783884013499',"shop_id":1083540577}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl

@@ -1,0 +1,26 @@
+name: 菜品接口
+
+PRODUCT_CASE1: #>>>>>>>>>商家点菜记录列表/product/list<<<<<<<<<<<<
+    Url: /product/list
+    Case1: #按日期门店精确查询菜品列表
+        Desc: 按日期门店精确查询菜品列表
+        ProductList: {"start":"2018-02-05","end":"2019-08-10","sids":1380598237}
+        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+        Appkey: b16058ee2fcdfec8f033c1ec0aff200e
+
+    Case2: #按日期查询菜品列表
+        Desc: 按日期查询菜品列表
+        ProductList: {"start":"2018-02-05","end":"2019-08-10"}
+        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+        Appkey: b16058ee2fcdfec8f033c1ec0aff200e
+
+
+PRODUCT_CASE2: #>>>>>>>>>>>商家点菜记录列表<<<<<<<<<<<<<<<
+    Url: /product/listbyuser
+    Case1: #查询会员点菜记录/product/listbyuser
+        Desc: 查询会员点菜记录
+        ProductListByUser: {"cno":"1213058752597379","start":"2018-02-05","end":"2018-08-10"}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+
+
+
