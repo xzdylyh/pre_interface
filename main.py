@@ -1,5 +1,6 @@
 #_*_coding:utf-8_*_
 import unittest
+import shutil
 from testScenario import testScenarioCase
 from testInterface import testActivity,testCharge,\
     testCoupon,testCredit,testDeal,testGrade,testManage,testProduct,\
@@ -24,8 +25,9 @@ def loadTestsList():
 if __name__=="__main__":
     suite = unittest.TestSuite()
     suite.addTests(loadTestsList())
+    file_name = 'Report_{}.html'.format(int(time.time()  * 1000))
 
-    filePath = os.path.join(gl.reportPath, 'Report.html')  # 确定生成报告的路径
+    filePath = os.path.join(gl.reportPath, file_name)  # 确定生成报告的路径
     print filePath
 
     with file(filePath, 'wb') as fp:
@@ -39,5 +41,12 @@ if __name__=="__main__":
         runner.run(suite)
         fp.close()
 
+    #复制report到 templates/report/下
+    shutil.copy(filePath, os.path.join(gl.templatesReportPath, file_name))
+
+    # 发送钉钉消息
+    msg = """★自动化测试消息★\n预发布接口自动化测试完成\n测试报告地址:http://60.205.217.8:5000/report/{}""".format(file_name)
+
+    scripts.send_msg_dding(msg)
     #发送测试报告To Email
     EmailClass().send

@@ -9,6 +9,10 @@ global tcodePath #t-code路径
 global reportPath #报告路径
 global configFile
 global debugFile
+global webPath
+global templatesPath
+global templatesReportPath
+
 
 PATH =lambda p:os.path.abspath(os.path.join(os.path.dirname(__file__),p))
 
@@ -20,8 +24,13 @@ tcodePath = os.path.join(dataPath,'TCode')
 reportPath = os.path.join(os.path.dirname(globalPath),'report')
 configFile = os.path.join(configPath,'config.yaml')
 debugFile = os.path.join(reportPath,'logging.log')
+webPath = os.path.join(os.path.dirname(globalPath), 'web')
+templatesPath = os.path.join(webPath, 'templates')
+templatesReportPath = os.path.join(templatesPath, 'report')
 
 if __name__=="__main__":
+    print( templatesPath)
+    print( templatesReportPath)
     print globalPath
     print configPath
     print dataPath

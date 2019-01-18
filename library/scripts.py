@@ -1,7 +1,7 @@
 #_*_coding:utf-8_*_
 from library.log import LogDebug
 import time,os,random
-import yaml,json,hashlib
+import yaml,json,hashlib,requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 from collections import OrderedDict
 from urllib import urlencode,quote
@@ -373,6 +373,25 @@ def MultipartPartData(**kwargs):
     headers['Content-Type'] = Me.content_type
 
     return Me,headers
+
+
+def send_msg_dding(msg):
+    """
+    发送消息到,钉钉群
+    :param msg: 要发送到钉钉的消息文本
+    :return: 响影内容
+    """
+    tk_str = '0c0d28d8323cfba2fb7743cad12a85f5835ff08dfbc4dfcb8aa2ca38d624014b'
+    url_str = "{}?tk={}&msg={}".format(
+        'https://dd.acewill.net/send.php',
+        tk_str,
+        msg
+    )
+
+    res = requests.get(url=url_str)
+    return res.json()
+
+
 
 
 if __name__=="__main__":
