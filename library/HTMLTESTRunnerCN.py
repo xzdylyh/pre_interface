@@ -83,6 +83,7 @@ import datetime
 import StringIO
 import sys
 import time
+from globalVar import gl
 import unittest
 from xml.sax import saxutils
 import sys
@@ -620,6 +621,15 @@ class HTMLTestRunner(Template_mixin):
         Return report attributes as a list of (name, value).
         Override this to add custom attributes.
         """
+        #初始化全局变量
+        gl._init()
+        #
+        count = result.success_count + result.failure_count + result.error_count
+        gl.set_value('sum', count)
+        gl.set_value('passed', result.success_count)
+        gl.set_value('failed', result.failure_count)
+        gl.set_value('error', result.error_count)
+
         startTime = str(self.startTime)[:19]
         duration = str(self.stopTime - self.startTime)
         status = []
@@ -630,6 +640,8 @@ class HTMLTestRunner(Template_mixin):
         if status:
             status = '，'.join(status)
             self.passrate = str("%.2f%%" % (float(result.success_count) / float(result.success_count + result.failure_count + result.error_count) * 100))
+            #通过率
+            gl.set_value('passrate', self.passrate)
         else:
             status = 'none'
         return [

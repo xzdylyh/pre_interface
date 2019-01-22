@@ -323,6 +323,44 @@ class TestUser(unittest.TestCase):
         self.assertTrue(res['res']['result'] == 'SUCCESS')
 
 
+    @ddt.data(
+        *(scripts.loadDdtData(filename='User.yaml',caseflag='USER_CASE17'))
+    )
+    def testUserGrade(self,data):
+        """查询会员等级信息/user/grade"""
+
+        res = scripts.loadtestInterface(
+            instance=HttpWebRequest(),
+            instance_pro='post',
+            data=data['UserGrade'],
+            appid=data['Appid'],
+            desc=data['Desc'],
+            url=data['Url']
+        )
+        # 断言
+        self.assertEqual(res['errcode'], 0, res['errmsg'])
+
+
+
+    @ddt.data(
+        *(scripts.loadDdtData(filename='User.yaml',caseflag='USER_CASE18'))
+    )
+    def testUserBindPhone(self,data):
+        """绑定/修改手机号/user/bindphone"""
+
+        res = scripts.loadtestInterface(
+            instance=HttpWebRequest(),
+            instance_pro='post',
+            data=data['BindPhone'],
+            appid=data['Appid'],
+            desc=data['Desc'],
+            url=data['Url']
+        )
+        # 断言
+        self.assertEqual(res['errcode'], 0, res['errmsg'])
+
+
+
 if __name__ == "__main__":
     suite = unittest.TestSuite()
 

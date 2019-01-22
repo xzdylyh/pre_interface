@@ -13,6 +13,24 @@ global webPath
 global templatesPath
 global templatesReportPath
 
+def _init():#初始化
+    global _global_dict
+    _global_dict = {}
+
+
+def set_value(key,value):
+    """ 定义一个全局变量 """
+    _global_dict[key] = value
+
+
+def get_value(key,defValue=None):
+    """获得一个全局变量,不存在则返回默认值"""
+    try:
+        return _global_dict[key]
+    except KeyError:
+        return defValue
+
+
 
 PATH =lambda p:os.path.abspath(os.path.join(os.path.dirname(__file__),p))
 
@@ -27,6 +45,9 @@ debugFile = os.path.join(reportPath,'logging.log')
 webPath = os.path.join(os.path.dirname(globalPath), 'web')
 templatesPath = os.path.join(webPath, 'templates')
 templatesReportPath = os.path.join(templatesPath, 'report')
+
+
+
 
 if __name__=="__main__":
     print( templatesPath)

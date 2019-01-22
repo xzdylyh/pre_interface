@@ -19,9 +19,9 @@ class HttpWebRequest(object):
         pass
 
 
-    #post方法
+    #post方法 getYamlfield(gl.configFile)['RETRY']['ReNum']
     @property
-    @retry(reNum=getYamlfield(gl.configFile)['RETRY']['ReNum'])
+    @retry(reNum=3)
     def post(self):
         #url拼接
         self.full_url = BaseConfig().base_url + self.url
@@ -29,10 +29,13 @@ class HttpWebRequest(object):
 
         #发送post请求
         res = requests.request("POST",self.full_url,data=self.payload,headers=self.headers)
-        if res.status_code ==200:
-            return res.json()
-        else:
-            return {"errcode": 9001, "errmsg": str(res)}
+        try:
+            if res.status_code ==200:
+                return res.json()
+            else:
+                return {"errcode": 9001, "errmsg": str(res)}
+        except:
+            print(res)
 
 if __name__=="__main__":
     print json.dumps(HttpWebRequest().post).decode('unicode-escape')

@@ -63,6 +63,6 @@ COUPON_CASE8: #手工调帐核销券
     Url: /coupon/adjust
     Case1: #手工调帐核销券/coupon/adjust #coupon_ids要是一个券包id
         Desc: 手工调帐核销券-券包不能调账(反向用例)
-        CouponAdjust: {"cno":"1863033613852369","coupon_ids":["1622893507025517100"],"cashier_id":"1140713955","shop_id":"1380598237","remark":"手工调帐带券包"}
+        CouponAdjust: {"cno":"1863033613852369","coupon_ids":["1623255144291803891"],"cashier_id":"1140713955","shop_id":"1380598237","remark":"手工调帐带券包"}
         Appid: dp0Rm4wNl6A7q6w1QzcZQstr
         Appkey: b16058ee2fcdfec8f033c1ec0aff200e
