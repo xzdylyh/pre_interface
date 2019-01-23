@@ -4,9 +4,9 @@ ACTIVITY_CASE1: #查询用户参与的集赞活动
     Url: /activity/getuserthumbuplog
     Case1: #/activity/getuserthumbuplog
         Desc: 查询用户参与的集赞活动
-        Getuserthumbuplog: {"cno":"1213058423185403","activity_id":3032337}
-        Appid: dp3wY4YtycajNEz23zZpb5Jl
-        Appkey: 4b6ef4ee839dfb0922c28e97143d371e
+        Getuserthumbuplog: {"cno":"1580119342629190","activity_id":3032362}
+        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+        Appkey: b16058ee2fcdfec8f033c1ec0aff200e
 
 
 ACTIVITY_CASE2: #获取活动列表

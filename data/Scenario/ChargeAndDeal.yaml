@@ -98,7 +98,7 @@ ChargeAndDeal: #用例数据集
 
         #交易预览
         DealPreviewUrl: /deal/preview
-        DealPreview: {"cno":"1213058673616305","shop_id":1083540577,"cashier_id":"1258030382","consume_amount":100,"sub_balance":0,"deno_coupon_ids":['1622693670355951890'],"gift_coupons_ids":[],"sub_credit":0,"payment_amount":0,"credit_amount":0,"payment_mode":4,"count_num":2,"biz_id":8036,"table_id":"A023"}
+        DealPreview: {"cno":"1213058673616305","shop_id":1083540577,"cashier_id":"1258030382","consume_amount":100,"sub_balance":0,"deno_coupon_ids":["1622693670347544487"],"gift_coupons_ids":[],"sub_credit":0,"payment_amount":0,"credit_amount":0,"payment_mode":4,"count_num":2,"biz_id":8036,"table_id":"A023"}
 
         #交易提交
         DealCommitUrl: /deal/commit

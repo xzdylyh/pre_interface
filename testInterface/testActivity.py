@@ -37,8 +37,8 @@ class TestActivity(unittest.TestCase):
         )
 
         #断言
-        self.assertEqual(res['errcode'],11001,res['errmsg'])#断言
-        #self.assertTrue(res['res'])
+        self.assertEqual(res['errcode'],0 ,res['errmsg'])#断言
+        self.assertTrue(res['res'])
 
 
     @ddt.data(*(scripts.loadDdtData(filename='Activity.yaml',caseflag='ACTIVITY_CASE2')))
