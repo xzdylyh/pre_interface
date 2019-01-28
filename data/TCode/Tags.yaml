@@ -13,16 +13,19 @@ TAGS_CASE2: #用户标签列表
     Case1: #/tag/listusertags
         Desc: 用户标签列表- 全部
         TagListUserTags: {"cno":"1213058752597379","category":0}
+        AssertCoce: 0
         Appid: dp3wY4YtycajNEz23zZpb5Jl
 
     Case2: #/tag/listusertags
         Desc: 用户标签列表- POS消费
         TagListUserTags: {"cno":"1213058752597379","category":1}
+        AssertCoce: 0
         Appid: dp3wY4YtycajNEz23zZpb5Jl
 
     Case3: #/tag/listusertags
         Desc: 用户标签列表- 菜品标签
         TagListUserTags: {"cno":"1213058752597379","category":4}
+        AssertCoce: 0
         Appid: dp3wY4YtycajNEz23zZpb5Jl
 
 

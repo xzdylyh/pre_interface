@@ -36,7 +36,7 @@ class TestTag(unittest.TestCase):
         )
         # 断言
         self.assertEqual(res['errcode'], 0, res['errmsg'])
-        self.assertTrue(res['res'])
+        # self.assertTrue(res['res'])
 
 
 

@@ -1,8 +1,8 @@
 #_*_coding:utf-8_*_
-
+import os
 from globalVar import gl
 from library import scripts
-import os
+
 
 class BaseConfig(object):
 

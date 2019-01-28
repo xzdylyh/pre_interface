@@ -52,17 +52,49 @@ USER_CASE6: #unionid查询用户
 USER_CASE7: #unionid开卡
     Url: /user/uopencard
     Case1: #/user/uopencard
-        Desc: unionid开卡
-        UserUopencard: {"unionid":"oyVuGxNOFLRYojWADvfi","shop_id":"1380598237","phone":'13718651996'}
+        Desc: unionid开卡-正常流程
+        UserUopencard: {"unionid":"scripts.rndTimeStr() + '005'","shop_id":"1380598237","phone":'13718651996'}
+        AssertCode: 0
         Appid: dp0Rm4wNl6A7q6w1QzcZQstr
         Appkey: b16058ee2fcdfec8f033c1ec0aff200e
+
+
+    Case2: #/user/uopencard
+        Desc: unionid开卡-反向用例(重复请求，该unionId 已开过卡)
+        UserUopencard: {"unionid":"20190125164269005","shop_id":"1380598237","phone":'13718651996'}
+        AssertCode: 90012
+        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+        Appkey: b16058ee2fcdfec8f033c1ec0aff200e
+
+#    Case3: #/user/uopencard  现在shopid不是必输,不做效验
+#        Desc: unionid开卡-反向用例(商家不存在)
+#        UserUopencard: {"unionid":"20190125164469005","shop_id":"1380596257","phone":'13718651996'}
+#        AssertCode: 23000
+#        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+#        Appkey: b16058ee2fcdfec8f033c1ec0aff200e
+
+
 
 USER_CASE8: #给指定用户发送验证码
     Url: /user/sendcode
     Case1: #/user/sendcode
-        Desc: 给指定用户发送验证码
+        Desc: 给指定用户发送验证码-实体卡会员
         UserSendcode: {"cno":"1213058263024675"}
         Appid: dp3wY4YtycajNEz23zZpb5Jl
+        Appkey: 4b6ef4ee839dfb0922c28e97143d371e
+
+    Case2: #/user/sendcode
+        Desc: 给指定用户发送验证码-电子卡会员
+        UserSendcode: {"cno":"1111587"}
+        Appid: dp0Rm4wNl6A7q6w1QzcZQstr
+        Appkey: b16058ee2fcdfec8f033c1ec0aff200e
+
+    Case3: #/user/sendcode
+        Desc: 给指定用户发送验证码-手机号
+        UserSendcode: {"cno":"13718651997"}
+        Appid: dp3wY4YtycajNEz23zZpb5Jl
+        Appkey: 4b6ef4ee839dfb0922c28e97143d371e
+
 
 
 USER_CASE9: #用户积分记录

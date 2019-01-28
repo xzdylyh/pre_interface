@@ -1,6 +1,8 @@
 #_*_coding:utf-8_*_
-from library.log import LogDebug
 import time,os,random
+from functools import wraps
+from library.log import LogDebug
+
 import yaml,json,hashlib,requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 from collections import OrderedDict
@@ -211,6 +213,7 @@ def retry(**kw):
     :return: 函数本身
     """
     def wrapper(func):
+        @wraps(func)
         def _wrapper(*args,**kwargs):
             raise_ex = None
             for n in range(kw['reNum']):

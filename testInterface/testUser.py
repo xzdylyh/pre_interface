@@ -137,7 +137,7 @@ class TestUser(unittest.TestCase):
         '''用户接口:unionid开卡/user/uopencard'''
 
         #unionid电子卡号
-        data['UserUopencard']['unionid'] = scripts.rndTimeStr()  +'005'
+        data['UserUopencard']['unionid'] = eval(data['UserUopencard']['unionid'])
 
         # 整合数据，调用接口，获取返回结果
         res = scripts.loadtestInterface(
@@ -150,7 +150,7 @@ class TestUser(unittest.TestCase):
             Appkey=data['Appkey']
         )
         #断言
-        self.assertEqual(res['errcode'], 0, res['errmsg'])
+        self.assertEqual(res['errcode'], data['AssertCode'], res['errmsg'])
 
 
     @ddt.data(*(scripts.loadDdtData(filename='User.yaml', caseflag='USER_CASE8')))
@@ -164,7 +164,8 @@ class TestUser(unittest.TestCase):
             data=data['UserSendcode'],
             appid=data['Appid'],
             desc=data['Desc'],
-            url=data['Url']
+            url=data['Url'],
+            Appkey=data['Appkey']
         )
         # 断言
         self.assertEqual(res['errcode'], 0, res['errmsg']) #断言 给指定用户发送验证码
