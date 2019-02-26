@@ -1,6 +1,6 @@
 ﻿name: 基本配置信息
 
-BASE_URL: http://api.pre.acewill.net
+BASE_URL: http://xxxxx
 
 RETRY: #请求失败重试设置
     ReNum: 3 #失败重试次数
